@@ -4,5 +4,10 @@ from contact.models import Contact
 from django.core.paginator import Paginator
 
 def create(request):
+    if request.method == 'POST':
+        print()
+        print(request.method)
+        print(request.POST.get('first_name'))
+        print(request.POST.get('last_name'))
     context = {}
     return render(request, 'contact/create.html', context)
